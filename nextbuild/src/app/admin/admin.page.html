@@ -1,0 +1,26 @@
+<ion-header [translucent]="true"> </ion-header>
+
+<ion-content *ngIf="pcComponents">
+  <ion-list *ngFor=" let r of pcComponents">
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <h3>{{r.ComponentName}}</h3>
+      </ion-label>
+      <ion-button (click)="EditPageModule(r)"
+      ><ion-icon name="create"></ion-icon
+      ></ion-button>
+      <ion-button (click)="delete(r.id)"
+      ><ion-icon name="trash"></ion-icon
+      ></ion-button>
+    </ion-item>
+  </ion-list>
+  <div class="ion-text-center ion-padding">
+    <ion-button expand="block" (click)="SavePageModule()"
+    >Add New Pc Components</ion-button
+    >
+  </div>
+</ion-content>
+
+
+
+

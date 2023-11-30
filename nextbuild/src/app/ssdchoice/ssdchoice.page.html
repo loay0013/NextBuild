@@ -1,0 +1,35 @@
+<!-- storage-choice.component.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Storage Choice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item (click)="selectStorage(500)">
+      <ion-thumbnail slot="start">
+        <img src="assets/images/storage/storage_500GB.jpg" alt="500 GB Image">
+      </ion-thumbnail>
+      <ion-label>500 GB</ion-label>
+    </ion-item>
+
+    <ion-item (click)="selectStorage(1000)">
+      <ion-thumbnail slot="start">
+        <img src="assets/images/storage/storage_1TB.jpg" alt="1 TB Image">
+      </ion-thumbnail>
+      <ion-label>1 TB</ion-label>
+    </ion-item>
+
+    <ion-item (click)="selectStorage(2000)">
+      <ion-thumbnail slot="start">
+        <img src="assets/images/storage/storage_2TB.jpg" alt="2 TB Image">
+      </ion-thumbnail>
+      <ion-label>2 TB</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button routerLink="tabs/">Next: Result</ion-button>
+</ion-content>
+

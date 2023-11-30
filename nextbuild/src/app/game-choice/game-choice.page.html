@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>GameChoice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let game of games" (click)="selectGame(game.id)" [class.selected]="isSelected(game.id)">
+      <ion-thumbnail slot="start">
+        <img src="https://via.placeholder.com/50" alt="{{ game.category }} Image">
+      </ion-thumbnail>
+      <ion-label>{{ game.category }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="nextPage()" [disabled]="selectedGames.length < 2">
+    Next: Graphics Card Choice
+  </ion-button>
+
+</ion-content>

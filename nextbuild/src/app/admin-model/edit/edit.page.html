@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <h3 class="dish-name-text truncate">
+          Edit Pc Component
+        </h3>
+      </ion-card-header>
+
+      <ion-item>
+          <ion-input
+            placeholder="Name"
+            type="text"
+            id="Name"
+            [(ngModel)]="PcComponent.ComponentName"
+            name="Name">
+          </ion-input>
+      </ion-item>
+
+    <ion-item>
+          <ion-input
+            placeholder="type"
+            type="number"
+            id="type"
+            [(ngModel)]="PcComponent.typeId"
+            name="type">
+          </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+          <ion-input
+            placeholder="price"
+            type="number"
+            id="price"
+            [(ngModel)]="PcComponent.price"
+            name="price">
+          </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+          <ion-input
+            placeholder="ram"
+            type="number"
+            id="ram"
+            [(ngModel)]="PcComponent.ram_capacity"
+            name="ram">
+          </ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-input
+          placeholder="storage"
+          type="number"
+          id="storage"
+          [(ngModel)]="PcComponent.storage_capacity"
+          name="storage">
+        </ion-input>
+      </ion-item>
+
+      <ion-button (click)="updatePcComponent()">Update </ion-button>
+
+    </ion-card>
+  </div>
+</ion-content>

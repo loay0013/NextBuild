@@ -1,0 +1,84 @@
+<ion-header [translucent]="true"> </ion-header>
+
+<ion-content>
+    <div *ngIf="!submitted">
+        <ion-card>
+            <ion-card-header>
+                <h3>Create pc</h3>
+            </ion-card-header>
+
+            <div class="form-group">
+                <ion-label for="Name">Name</ion-label>
+                <ion-input
+                        type="text"
+                        class="form-control"
+                        id="Name"
+                        required
+                        [(ngModel)]="PcComponent.ComponentName"
+                        name="Name"/>
+            </div>
+
+          <div class="form-group">
+            <ion-label for="type">type</ion-label>
+            <ion-input
+              type="text"
+              class="form-control"
+              id="type"
+              required
+              [(ngModel)]="PcComponent.typeId"
+              name="Name"/>
+          </div>
+
+          <div class="form-group">
+            <ion-label for="brand">brand</ion-label>
+            <ion-input
+              type="number"
+              class="form-control"
+              id="brand"
+              required
+              [(ngModel)]="PcComponent.price"
+              name="Name"/>
+          </div>
+
+          <div class="form-group">
+            <ion-label for="price">ram</ion-label>
+            <ion-input
+              type="number"
+              class="form-control"
+              id="ram_capacity"
+              required
+              [(ngModel)]="PcComponent.ram_capacity"
+              name="Name"/>
+          </div>
+
+          <div class="form-group">
+            <ion-label for="storage">storage</ion-label>
+            <ion-input
+              type="number"
+              class="form-control"
+              id="storage"
+              required
+              [(ngModel)]="PcComponent.storage_capacity"
+              name="Name"/>
+          </div>
+
+          <div class="form-group">
+            <ion-label for="category">category</ion-label>
+            <ion-input
+              type="number"
+              class="form-control"
+              id="category"
+              required
+              [(ngModel)]="PcComponent.category"
+              name="Name"/>
+          </div>
+
+          <ion-button (click)="savePcComponent()">
+                Add Pc Component
+            </ion-button>
+        </ion-card>
+
+
+    </div>
+
+</ion-content>
