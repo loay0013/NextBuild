@@ -1,0 +1,98 @@
+ion-content{
+    --background: linear-gradient(196deg, #182539 47.63%, #142236 107.97%)!important;
+}
+
+
+
+$background: linear-gradient(196deg, #182539 47.63%, #142236 107.97%)!important;
+
+.next_build-color{
+    color: #39D67F;
+}
+
+h1{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+p{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.card{
+    height: 240px;
+    width: 220px;
+    object-fit: cover;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.card-container {
+    position: relative;
+    overflow: hidden;
+    width: 160px;
+  }
+  
+  .card-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 66.666%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: start;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  
+  ion-row {
+    align-items: stretch; /* Ensure equal height for columns in the row */
+  }
+  
+  ion-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .low{
+    background: linear-gradient(262deg, rgba(251, 131, 78, 0.71) -9.75%, #B0491C 104.19%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .mid{
+    background: linear-gradient(262deg, #F90 -9.75%, rgba(250, 226, 15, 0.55) 104.19%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .high{
+    background: linear-gradient(262deg, #49F60C -9.75%, rgba(87, 125, 69, 0.70) 104.19%, #577D45 104.19%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  
+  button{
+    margin-top: 40px;
+    border-radius: 5px;
+    background: linear-gradient(277deg, #12c657 5.23%, #075138 107.86%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 152px;
+    height: 43px;
+    font-size: 17px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.d-flex{
+    display: flex!important;
+}
+
+ion-icon{
+    padding: 5px;
+}

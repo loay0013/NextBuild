@@ -34,7 +34,28 @@ const routes: Routes = [
   {
     path: 'multitask',
     loadChildren: () => import('./multitask/multitask.module').then( m => m.MultitaskPageModule)
+  },
+  {
+    path: 'gameselect',
+    loadChildren: () => import('./sigurdWorkspace/gameselect/gameselect.module').then( m => m.GameselectPageModule)
+  },
+  {
+    path: 'graphics',
+    loadChildren: () => import('./sigurdWorkspace/graphics/graphics.module').then(m => m.GraphicsPageModule)
+  },
+  {
+    path: 'graphics',
+    loadChildren: () => import('./sigurdWorkspace/graphics/graphics.module').then( m => m.GraphicsPageModule)
+  },  {
+    path: 'storage',
+    loadChildren: () => import('./sigurdWorkspace/storage/storage.module').then( m => m.StoragePageModule)
+  },
+  {
+    path: 'multitasking',
+    loadChildren: () => import('./sigurdWorkspace/multitasking/multitasking.module').then( m => m.MultitaskingPageModule)
   }
+
+
 ];
 @NgModule({
   imports: [
