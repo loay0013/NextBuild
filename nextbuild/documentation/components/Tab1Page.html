@@ -1,0 +1,677 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nextbuild documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">nextbuild documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Tab1Page</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/tab1/tab1.page.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab1</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>tab1.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>tab1.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#hideTabs" >hideTabs</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#swiperSlideChanged" >swiperSlideChanged</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/tab1/tab1.page.ts:9</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="swiperSlideChanged"></a>
+                    <span class="name">
+                        <span ><b>swiperSlideChanged</b></span>
+                        <a href="#swiperSlideChanged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>swiperSlideChanged(e: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="12"
+                                    class="link-to-prism">src/app/tab1/tab1.page.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>e</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideTabs"></a>
+                    <span class="name">
+                        <span ><b>hideTabs</b></span>
+                        <a href="#hideTabs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>true</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/tab1/tab1.page.ts:9</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-tab1&#x27;,
+  templateUrl: &#x27;tab1.page.html&#x27;,
+  styleUrls: [&#x27;tab1.page.scss&#x27;]
+})
+export class Tab1Page {
+  hideTabs &#x3D; true;
+
+  constructor() {}
+  swiperSlideChanged(e: any) {
+    console.log(&#x27;changed:&#x27; ,e);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content scrollX&#x3D;&quot;false&quot; scrollY&#x3D;&quot;false&quot;&gt;
+  &lt;!------Slide funktion - Ik&#x27; rør ved den her!------&gt;
+  &lt;swiper-container
+          (slidechange)&#x3D;&quot;swiperSlideChanged($event)&quot;
+          [loop]&#x3D;&quot;true&quot;
+          [pagination]&#x3D;&quot;true&quot;&gt;
+
+    &lt;!----Slide 1------&gt;
+    &lt;swiper-slide class&#x3D;&quot;slide-1&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;ion-justify-content-center ion-align-items-start&quot;&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;div class&#x3D;&quot;ion-text-center padding-top&quot;&gt;
+            &lt;h1 class&#x3D;&quot;first-page-titel&quot;&gt;Velkommen til&lt;/h1&gt;
+            &lt;p class&#x3D;&quot;titel-1&quot;&gt;NexBuild&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;picture-front-page&quot;&gt;
+            &lt;img src&#x3D;&quot;/assets/img/picture-1.png&quot; alt&#x3D;&quot;&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;first-page-text&quot;&gt;
+            &lt;p&gt;Vi er begejstrede for at præsentere NexBuild, din dedikerede ledsager i computer bygning!&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/swiper-slide&gt;
+
+    &lt;!------ Slide 2 -------&gt;
+    &lt;swiper-slide class&#x3D;&quot;slide-2&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;ion-justify-content-center ion-align-items-start&quot;&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;div class&#x3D;&quot;ion-text-center padding-top&quot;&gt;
+            &lt;h1 class&#x3D;&quot;first-page-titel&quot;&gt;Byg efter dine&lt;/h1&gt;
+            &lt;p class&#x3D;&quot;titel-1&quot;&gt;behov&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;picture-front-page&quot;&gt;
+            &lt;img src&#x3D;&quot;/assets/img/grid-component-slide-2.svg&quot; alt&#x3D;&quot;&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;first-page-text&quot;&gt;
+            &lt;p&gt;Vælg den type computer du leder efter om det er til gaming, arbejde eller streaming.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/swiper-slide&gt;
+
+    &lt;!----- Slide 3 -------&gt;
+    &lt;swiper-slide class&#x3D;&quot;slide-3&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;ion-justify-content-center ion-align-items-start&quot;&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;div class&#x3D;&quot;ion-text-center padding-top&quot;&gt;
+            &lt;h1 class&#x3D;&quot;first-page-titel&quot;&gt;Tilføj dine&lt;/h1&gt;
+            &lt;p class&#x3D;&quot;titel-1&quot;&gt;favoritter&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;picture-front-page&quot;&gt;
+            &lt;img src&#x3D;&quot;/assets/img/picture-2.png&quot; alt&#x3D;&quot;&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;first-page-text&quot;&gt;
+            &lt;p&gt;Du kan også gemme dine builds til favoritter.&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/swiper-slide&gt;
+
+    &lt;!----- Slide 4 -------&gt;
+    &lt;swiper-slide class&#x3D;&quot;slide-4&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;ion-justify-content-center ion-align-items-start&quot;&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;div class&#x3D;&quot;ion-text-center padding-top&quot;&gt;
+            &lt;h1 class&#x3D;&quot;first-page-titel&quot;&gt;Klar, parat,&lt;/h1&gt;
+            &lt;p class&#x3D;&quot;titel-1&quot;&gt;start!&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;picture-front-page&quot;&gt;
+            &lt;img src&#x3D;&quot;/assets/img/picture-4.png&quot; alt&#x3D;&quot;&quot;&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;first-page-text&quot;&gt;
+            &lt;p&gt;Du kan også gemme dine builds til favoritter.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;ion-text-center&quot;&gt;
+            &lt;button routerLink&#x3D;&quot;/dashboard&quot; routerDirection&#x3D;&quot;root&quot; class&#x3D;&quot;end-button&quot; type&#x3D;&quot;button&quot;&gt;Byg nu&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/swiper-slide&gt;
+  &lt;/swiper-container&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>tab1.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">swiper-container {
+  width: 100%;
+  height: 100%;
+  --swiper-pagination-color: #3BFF8A;
+  --swiper-pagination-bullet-inactive-color: #D9D9D9;
+  --swiper-pagination-bullet-size: 14px;
+}
+
+
+.slide-1 {
+  background: linear-gradient(205deg, #1A3740 -5.56%, #183139 114.23%);
+  display: flex;
+  justify-content: center;
+}
+
+.slide-2 {
+  background: linear-gradient(192deg, #19263A 0%, #132135 100.36%);
+}
+
+.slide-3 {
+  background: linear-gradient(193deg, #211E48 0%, #151239 96.69%);
+}
+
+.slide-4 {
+  background: linear-gradient(196deg, #321D4D 47.63%, #26172E 107.97%);
+}
+
+//------------------------//
+
+
+
+//------------------------//
+p {
+  margin-top: 8px;
+}
+
+.picture-front-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+.padding-top {
+  padding-top: 60px;
+}
+
+.titel-1 {
+  color: var(--White, #3CFF8A);
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 6px 0 10px 0;
+}
+
+.first-page-titel {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 10px 0 0 0;
+}
+
+.first-page-text {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  margin: 0 12px 0 12px; /* 164.706% */
+  padding-top: 12px;
+}
+
+.end-button {
+  margin-top: 30px;
+  width: 152px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 21.5px;
+  background: linear-gradient(267deg, #0A5BA7 -13.85%, #1D6E73 106.43%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 20, 0.16);
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 164.706% */
+}
+ion-tab-bar{
+  display: none;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content scrollX="false" scrollY="false">  <!------Slide funktion - Ik\' rør ved den her!------>  <swiper-container          (slidechange)="swiperSlideChanged($event)"          [loop]="true"          [pagination]="true">    <!----Slide 1------>    <swiper-slide class="slide-1">      <ion-row class="ion-justify-content-center ion-align-items-start">        <ion-col size="12">          <div class="ion-text-center padding-top">            <h1 class="first-page-titel">Velkommen til</h1>            <p class="titel-1">NexBuild</p>          </div>          <div class="picture-front-page">            <img src="/assets/img/picture-1.png" alt="">          </div>          <div class="first-page-text">            <p>Vi er begejstrede for at præsentere NexBuild, din dedikerede ledsager i computer bygning!</p>          </div>        </ion-col>      </ion-row>    </swiper-slide>    <!------ Slide 2 ------->    <swiper-slide class="slide-2">      <ion-row class="ion-justify-content-center ion-align-items-start">        <ion-col size="12">          <div class="ion-text-center padding-top">            <h1 class="first-page-titel">Byg efter dine</h1>            <p class="titel-1">behov</p>          </div>          <div class="picture-front-page">            <img src="/assets/img/grid-component-slide-2.svg" alt="">          </div>          <div class="first-page-text">            <p>Vælg den type computer du leder efter om det er til gaming, arbejde eller streaming.</p>          </div>        </ion-col>      </ion-row>    </swiper-slide>    <!----- Slide 3 ------->    <swiper-slide class="slide-3">      <ion-row class="ion-justify-content-center ion-align-items-start">        <ion-col size="12">          <div class="ion-text-center padding-top">            <h1 class="first-page-titel">Tilføj dine</h1>            <p class="titel-1">favoritter</p>          </div>          <div class="picture-front-page">            <img src="/assets/img/picture-2.png" alt="">          </div>          <div class="first-page-text">            <p>Du kan også gemme dine builds til favoritter.</p>          </div>        </ion-col>      </ion-row>    </swiper-slide>    <!----- Slide 4 ------->    <swiper-slide class="slide-4">      <ion-row class="ion-justify-content-center ion-align-items-start">        <ion-col size="12">          <div class="ion-text-center padding-top">            <h1 class="first-page-titel">Klar, parat,</h1>            <p class="titel-1">start!</p>          </div>          <div class="picture-front-page">            <img src="/assets/img/picture-4.png" alt="">          </div>          <div class="first-page-text">            <p>Du kan også gemme dine builds til favoritter.</p>          </div>          <div class="ion-text-center">            <button routerLink="/dashboard" routerDirection="root" class="end-button" type="button">Byg nu</button>          </div>        </ion-col>      </ion-row>    </swiper-slide>  </swiper-container></ion-content></div>'
+    var COMPONENTS = [{'name': 'AdminPage', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardPage', 'selector': 'app-dashboard'},{'name': 'EditPage', 'selector': 'app-edit'},{'name': 'ExploreContainerComponent', 'selector': 'app-explore-container'},{'name': 'GameChoicePage', 'selector': 'app-game-choice'},{'name': 'GraphicsCardChoicePage', 'selector': 'app-graphics-card-choice'},{'name': 'MultitaskPage', 'selector': 'app-multitask'},{'name': 'ResultaterPage', 'selector': 'app-resultater'},{'name': 'SavePage', 'selector': 'app-save'},{'name': 'SSDChoicePage', 'selector': 'app-ssdchoice'},{'name': 'Tab1Page', 'selector': 'app-tab1'},{'name': 'Tab2Page', 'selector': 'app-tab2'},{'name': 'Tab3Page', 'selector': 'app-tab3'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Tab1Page'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Tab1Page.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

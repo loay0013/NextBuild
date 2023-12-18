@@ -1,17 +1,83 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content scrollX="false" scrollY="false">
+  <!------Slide funktion - Ik' rør ved den her!------>
+  <swiper-container
+          (slidechange)="swiperSlideChanged($event)"
+          [loop]="true"
+          [pagination]="true">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!----Slide 1------>
+    <swiper-slide class="slide-1">
+      <ion-row class="ion-justify-content-center ion-align-items-start">
+        <ion-col size="12">
+          <div class="ion-text-center padding-top">
+            <h1 class="first-page-titel">Velkommen til</h1>
+            <p class="titel-1">NexBuild</p>
+          </div>
+          <div class="picture-front-page">
+            <img src="/assets/img/picture-1.png" alt="">
+          </div>
+          <div class="first-page-text">
+            <p>Vi er begejstrede for at præsentere NexBuild, din dedikerede ledsager i computer bygning!</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </swiper-slide>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <!------ Slide 2 ------->
+    <swiper-slide class="slide-2">
+      <ion-row class="ion-justify-content-center ion-align-items-start">
+        <ion-col size="12">
+          <div class="ion-text-center padding-top">
+            <h1 class="first-page-titel">Byg efter dine</h1>
+            <p class="titel-1">behov</p>
+          </div>
+          <div class="picture-front-page">
+            <img src="/assets/img/grid-component-slide-2.svg" alt="">
+          </div>
+          <div class="first-page-text">
+            <p>Vælg den type computer du leder efter om det er til gaming, arbejde eller streaming.</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </swiper-slide>
+
+    <!----- Slide 3 ------->
+    <swiper-slide class="slide-3">
+      <ion-row class="ion-justify-content-center ion-align-items-start">
+        <ion-col size="12">
+          <div class="ion-text-center padding-top">
+            <h1 class="first-page-titel">Tilføj dine</h1>
+            <p class="titel-1">favoritter</p>
+          </div>
+          <div class="picture-front-page">
+            <img src="/assets/img/picture-2.png" alt="">
+          </div>
+          <div class="first-page-text">
+            <p>Du kan også gemme dine builds til favoritter.</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </swiper-slide>
+
+    <!----- Slide 4 ------->
+    <swiper-slide class="slide-4">
+      <ion-row class="ion-justify-content-center ion-align-items-start">
+        <ion-col size="12">
+          <div class="ion-text-center padding-top">
+            <h1 class="first-page-titel">Klar, parat,</h1>
+            <p class="titel-1">start!</p>
+          </div>
+          <div class="picture-front-page">
+            <img src="/assets/img/picture-4.png" alt="">
+          </div>
+          <div class="first-page-text">
+            <p>Du kan også gemme dine builds til favoritter.</p>
+          </div>
+          <div class="ion-text-center">
+            <button routerLink="/dashboard" routerDirection="root" class="end-button" type="button">Byg nu</button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>

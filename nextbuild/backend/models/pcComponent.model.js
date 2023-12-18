@@ -12,7 +12,6 @@ module.exports = (sequelize, Sequelize) => {
     },
     typeId: {
       type: Sequelize.STRING,
-      allowNull: false,
     },
     price: {
       type: Sequelize.DECIMAL(10, 2),
@@ -26,6 +25,9 @@ module.exports = (sequelize, Sequelize) => {
     category: {
         type: Sequelize.STRING,
       },
+    processorName: {
+      type: Sequelize.STRING, // Tilføjet nyt felt for processor
+    },
   });
 
   return PcComponent;

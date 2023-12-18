@@ -31,7 +31,6 @@ const routes: Routes = [
         path: 'save',
         loadChildren: () => import('../admin-model/save/save.module').then(m => m.SavePageModule)
       },
-
       {
         path: 'game-choice',
         loadChildren: () => import('../game-choice/game-choice.module').then( m => m.GameChoicePageModule)
@@ -41,12 +40,16 @@ const routes: Routes = [
         loadChildren: () => import('../graphics-card-choice/graphics-card-choice.module').then( m => m.GraphicsCardChoicePageModule)
       },
       {
-        path: 'ssd-choice',
+        path: 'ssdchoice',
         loadChildren: () => import('../ssdchoice/ssdchoice.module').then( m => m.SSDChoicePageModule)
       },
       {
         path: 'multitask',
         loadChildren: () => import('../multitask/multitask.module').then( m => m.MultitaskPageModule)
+      },
+      {
+        path: 'resultater',
+        loadChildren: () => import('../resultater/resultater.module').then( m => m.ResultaterPageModule)
       },
       {
         path: '',

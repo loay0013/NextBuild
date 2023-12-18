@@ -1,0 +1,966 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nextbuild documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">nextbuild documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SSDChoicePage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/ssdchoice/ssdchoice.page.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-ssdchoice</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./ssdchoice.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./ssdchoice.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#selectedGraphicsData" >selectedGraphicsData</a>
+                            </li>
+                            <li>
+                                <a href="#selectedStorageCapacity" >selectedStorageCapacity</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTypeId" >selectedTypeId</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#fetchGraphicsData" >fetchGraphicsData</a>
+                            </li>
+                            <li>
+                                <a href="#ionViewWillEnter" >ionViewWillEnter</a>
+                            </li>
+                            <li>
+                                <a href="#nextPage" >nextPage</a>
+                            </li>
+                            <li>
+                                <a href="#selectStorageCapacity" >selectStorageCapacity</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router, route: ActivatedRoute, pcComponentService: <a href="../injectables/PcComponentService.html" target="_self">PcComponentService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                    <code>ActivatedRoute</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pcComponentService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PcComponentService.html" target="_self" >PcComponentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchGraphicsData"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>fetchGraphicsData</b></span>
+                        <a href="#fetchGraphicsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchGraphicsData()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="38"
+                                    class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:38</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ionViewWillEnter"></a>
+                    <span class="name">
+                        <span ><b>ionViewWillEnter</b></span>
+                        <a href="#ionViewWillEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ionViewWillEnter()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="22"
+                                    class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextPage"></a>
+                    <span class="name">
+                        <span ><b>nextPage</b></span>
+                        <a href="#nextPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextPage()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="58"
+                                    class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:58</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectStorageCapacity"></a>
+                    <span class="name">
+                        <span ><b>selectStorageCapacity</b></span>
+                        <a href="#selectStorageCapacity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectStorageCapacity(storageCapacity: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="54"
+                                    class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:54</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>storageCapacity</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedGraphicsData"></a>
+                    <span class="name">
+                        <span ><b>selectedGraphicsData</b></span>
+                        <a href="#selectedGraphicsData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/PcComponent.html" target="_self" >PcComponent[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedStorageCapacity"></a>
+                    <span class="name">
+                        <span ><b>selectedStorageCapacity</b></span>
+                        <a href="#selectedStorageCapacity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedTypeId"></a>
+                    <span class="name">
+                        <span ><b>selectedTypeId</b></span>
+                        <a href="#selectedTypeId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>number | null</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/ssdchoice/ssdchoice.page.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { PcComponentService } from &#x27;src/app/services/pcComponents.service&#x27;;
+import { PcComponent } from &#x27;src/app/models/pcComponents.model&#x27;;
+
+@Component({
+    selector: &#x27;app-ssdchoice&#x27;,
+    templateUrl: &#x27;./ssdchoice.page.html&#x27;,
+    styleUrls: [&#x27;./ssdchoice.page.scss&#x27;],
+})
+export class SSDChoicePage {
+    selectedStorageCapacity: string | null &#x3D; null;
+    selectedGraphicsData: PcComponent[] &#x3D; [];
+    selectedTypeId: number | null &#x3D; null;
+
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute,
+        private pcComponentService: PcComponentService
+    ) {}
+
+    ionViewWillEnter() {
+        // Retrieve data from the previous page (graphics-card-choice)
+        const navigation &#x3D; this.router.getCurrentNavigation();
+        if (navigation?.extras.state) {
+            // Retrieve previous state data
+            const prevState &#x3D; navigation.extras.state;
+
+            // Update current state with previous state data
+            this.selectedTypeId &#x3D; prevState[&#x27;selectedTypeId&#x27;];
+            this.selectedGraphicsData &#x3D; prevState[&#x27;selectedGraphicsData&#x27;];
+        }
+
+        // Fetch data from the database based on selected typeId
+        this.fetchGraphicsData();
+    }
+
+    private fetchGraphicsData() {
+        if (this.selectedTypeId !&#x3D;&#x3D; null) {
+            this.pcComponentService.findByTypeId(this.selectedTypeId.toString()).subscribe((data) &#x3D;&gt; {
+                this.selectedGraphicsData &#x3D; data;
+                console.log(&#x27;All Selected Graphics Data:&#x27;, this.selectedGraphicsData);
+
+                // Fetch data based on selected storage capacity
+                if (this.selectedStorageCapacity !&#x3D;&#x3D; null) {
+                    this.pcComponentService.findByStorageCapacity(this.selectedStorageCapacity).subscribe((storageData) &#x3D;&gt; {
+                        console.log(&#x27;Selected Storage Data:&#x27;, storageData);
+                    });
+                }
+            });
+        }
+    }
+
+    selectStorageCapacity(storageCapacity: string) {
+        this.selectedStorageCapacity &#x3D; storageCapacity;
+    }
+
+    nextPage() {
+        console.log(&#x27;All Selected Graphics Data:&#x27;, this.selectedGraphicsData);
+        console.log(&#x27;Selected Storage Capacity:&#x27;, this.selectedStorageCapacity);
+
+        // Check if a storage capacity is selected
+        if (this.selectedStorageCapacity !&#x3D;&#x3D; null) {
+            // Filter data based on the selected storage capacity
+            const filteredData &#x3D; this.selectedGraphicsData.filter(
+                (component) &#x3D;&gt; component.storage_capacity &#x3D;&#x3D;&#x3D; this.selectedStorageCapacity
+            );
+
+            // Log the filtered data
+            console.log(&#x27;Selected Storage Data:&#x27;, filteredData);
+
+            // Log the data being sent to the next page
+            console.log(&#x27;Data being sent to next page:&#x27;, {
+                selectedGraphicsData: filteredData,
+                selectedStorageCapacity: this.selectedStorageCapacity,
+                selectedTypeId: this.selectedTypeId,
+            });
+
+            const queryParams &#x3D; {
+                selectedComponentNames: this.route.snapshot.queryParams[&#x27;selectedComponentNames&#x27;] || null,
+                selectedProcessorName: this.route.snapshot.queryParams[&#x27;selectedProcessorName&#x27;]|| null,
+                selectedStorageCapacity: this.selectedStorageCapacity,
+                selectedTypeId: this.selectedTypeId,  // Inkludér selectedTypeId her
+            };
+
+            // Send all data to the next page
+            this.router.navigate([&#x27;/multitask&#x27;], {
+                queryParams,
+            });
+        } else {
+            // Handle errors, e.g., display a message to the user
+            console.error(&#x27;Vælg venligst en storage-kapacitet, før du går videre.&#x27;);
+        }
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+&lt;ion-content class&#x3D;&quot;custom-bg&quot;&gt;
+    &lt;div class&#x3D;&quot;ion-text-center&quot;&gt;
+        &lt;h1 class&#x3D;&quot;&quot;&gt;Lagrings &lt;span class&#x3D;&quot;next_build-color&quot;&gt;Valg&lt;/span&gt;&lt;/h1&gt;
+        &lt;p class&#x3D;&quot;ion-padding&quot;&gt;
+            &lt;span class&#x3D;&quot;next_build-color&quot;&gt;Lagring&lt;/span&gt; omhandler den tilgængelige plads til &lt;span class&#x3D;&quot;next_build-color&quot;&gt;filer&lt;/span&gt;, &lt;span class&#x3D;&quot;next_build-color&quot;&gt;programmer&lt;/span&gt; og &lt;span class&#x3D;&quot;next_build-color&quot;&gt;spil&lt;/span&gt;. Vælg den &lt;span class&#x3D;&quot;next_build-color&quot;&gt;lagring&lt;/span&gt; der passer bedst for dig.
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;ion-grid class&#x3D;&quot;mt-0&quot;&gt;
+        &lt;ion-row&gt;
+            &lt;ion-col size-md&#x3D;&quot;6&quot; class&#x3D;&quot;ion-text-center&quot; (click)&#x3D;&quot;selectStorageCapacity(&#x27;500gb&#x27;)&quot; [class.selected]&#x3D;&quot;selectedStorageCapacity &#x3D;&#x3D;&#x3D; &#x27;500gb&#x27;&quot;&gt;
+                &lt;div class&#x3D;&quot;card-container&quot;&gt;
+                    &lt;img class&#x3D;&quot;card&quot; alt&#x3D;&quot;lav lagring&quot; src&#x3D;&quot;../../assets/img/lav.png&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/ion-col&gt;
+
+            &lt;ion-col size-md&#x3D;&quot;6&quot; class&#x3D;&quot;ion-text-center&quot; (click)&#x3D;&quot;selectStorageCapacity(&#x27;1tb&#x27;)&quot; [class.selected]&#x3D;&quot;selectedStorageCapacity &#x3D;&#x3D;&#x3D; &#x27;1tb&#x27;&quot;&gt;
+                &lt;div class&#x3D;&quot;card-container&quot;&gt;
+                    &lt;img class&#x3D;&quot;card&quot; alt&#x3D;&quot;middel lagring&quot; src&#x3D;&quot;../../assets/img/mid.png&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+        &lt;ion-row&gt;
+            &lt;ion-col size-md&#x3D;&quot;6&quot; class&#x3D;&quot;ion-text-center&quot; (click)&#x3D;&quot;selectStorageCapacity(&#x27;2tb&#x27;)&quot; [class.selected]&#x3D;&quot;selectedStorageCapacity &#x3D;&#x3D;&#x3D; &#x27;2tb&#x27;&quot;&gt;
+                &lt;div class&#x3D;&quot;card-container&quot;&gt;
+                    &lt;img class&#x3D;&quot;card&quot; alt&#x3D;&quot;høj lagring&quot; src&#x3D;&quot;../../assets/img/stor.png&quot; /&gt;
+                &lt;/div&gt;
+            &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+    &lt;/ion-grid&gt;
+
+    &lt;ion-grid class&#x3D;&quot;ion-text-center&quot;&gt;
+        &lt;ion-row&gt;
+            &lt;ion-col&gt;
+                &lt;button expand&#x3D;&quot;full&quot; routerLink&#x3D;&quot;/tabs/graphics-card-choice&quot;&gt;
+                    &lt;div class&#x3D;&quot;ion-align-items-center d-flex ion-justify-content-center&quot;&gt;
+                        &lt;ion-icon name&#x3D;&quot;arrow-back-outline&quot;&gt;&lt;/ion-icon&gt;
+                        Gå tilbage
+                    &lt;/div&gt;
+                &lt;/button&gt;
+            &lt;/ion-col&gt;
+            &lt;ion-col&gt;
+                &lt;button expand&#x3D;&quot;full&quot; (click)&#x3D;&quot;nextPage()&quot; [disabled]&#x3D;&quot;selectedStorageCapacity &#x3D;&#x3D;&#x3D; null&quot;&gt;
+                    &lt;div class&#x3D;&quot;ion-align-items-center d-flex ion-justify-content-center&quot;&gt;
+                        Gå videre
+                        &lt;ion-icon name&#x3D;&quot;arrow-forward-outline&quot;&gt;&lt;/ion-icon&gt;
+                    &lt;/div&gt;
+                &lt;/button&gt;
+            &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+    &lt;/ion-grid&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./ssdchoice.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ion-content{
+  --background: linear-gradient(196deg, #321D4D 47.63%, #2A1936 107.97%)!important;
+}
+
+
+
+$background: linear-gradient(196deg, #321D4D 47.63%, #2A1936 107.97%)!important;
+
+.next_build-color{
+  color: #39D67F;
+}
+
+h1{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+p{
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card{
+  height: 240px;
+  width: 220px;
+  object-fit: cover;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+
+button{
+  margin-top: 40px;
+  border-radius: 5px;
+  background: linear-gradient(277deg, #12c657 5.23%, #075138 107.86%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 152px;
+  height: 43px;
+  font-size: 17px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.d-flex{
+  display: flex!important;
+}
+
+ion-icon{
+  padding: 5px;
+}
+
+.card-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+
+ion-row {
+  align-items: stretch;
+}
+
+ion-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content class="custom-bg">    <div class="ion-text-center">        <h1 class="">Lagrings <span class="next_build-color">Valg</span></h1>        <p class="ion-padding">            <span class="next_build-color">Lagring</span> omhandler den tilgængelige plads til <span class="next_build-color">filer</span>, <span class="next_build-color">programmer</span> og <span class="next_build-color">spil</span>. Vælg den <span class="next_build-color">lagring</span> der passer bedst for dig.        </p>    </div>    <ion-grid class="mt-0">        <ion-row>            <ion-col size-md="6" class="ion-text-center" (click)="selectStorageCapacity(\'500gb\')" [class.selected]="selectedStorageCapacity === \'500gb\'">                <div class="card-container">                    <img class="card" alt="lav lagring" src="../../assets/img/lav.png" />                </div>            </ion-col>            <ion-col size-md="6" class="ion-text-center" (click)="selectStorageCapacity(\'1tb\')" [class.selected]="selectedStorageCapacity === \'1tb\'">                <div class="card-container">                    <img class="card" alt="middel lagring" src="../../assets/img/mid.png" />                </div>            </ion-col>        </ion-row>        <ion-row>            <ion-col size-md="6" class="ion-text-center" (click)="selectStorageCapacity(\'2tb\')" [class.selected]="selectedStorageCapacity === \'2tb\'">                <div class="card-container">                    <img class="card" alt="høj lagring" src="../../assets/img/stor.png" />                </div>            </ion-col>        </ion-row>    </ion-grid>    <ion-grid class="ion-text-center">        <ion-row>            <ion-col>                <button expand="full" routerLink="/tabs/graphics-card-choice">                    <div class="ion-align-items-center d-flex ion-justify-content-center">                        <ion-icon name="arrow-back-outline"></ion-icon>                        Gå tilbage                    </div>                </button>            </ion-col>            <ion-col>                <button expand="full" (click)="nextPage()" [disabled]="selectedStorageCapacity === null">                    <div class="ion-align-items-center d-flex ion-justify-content-center">                        Gå videre                        <ion-icon name="arrow-forward-outline"></ion-icon>                    </div>                </button>            </ion-col>        </ion-row>    </ion-grid></ion-content></div>'
+    var COMPONENTS = [{'name': 'AdminPage', 'selector': 'app-admin'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'DashboardPage', 'selector': 'app-dashboard'},{'name': 'EditPage', 'selector': 'app-edit'},{'name': 'ExploreContainerComponent', 'selector': 'app-explore-container'},{'name': 'GameChoicePage', 'selector': 'app-game-choice'},{'name': 'GraphicsCardChoicePage', 'selector': 'app-graphics-card-choice'},{'name': 'MultitaskPage', 'selector': 'app-multitask'},{'name': 'ResultaterPage', 'selector': 'app-resultater'},{'name': 'SavePage', 'selector': 'app-save'},{'name': 'SSDChoicePage', 'selector': 'app-ssdchoice'},{'name': 'Tab1Page', 'selector': 'app-tab1'},{'name': 'Tab2Page', 'selector': 'app-tab2'},{'name': 'Tab3Page', 'selector': 'app-tab3'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SSDChoicePage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SSDChoicePage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

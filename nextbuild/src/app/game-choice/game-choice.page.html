@@ -1,20 +1,62 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>GameChoice</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list>
-    <ion-item *ngFor="let game of games" (click)="selectGame(game.id)" [class.selected]="isSelected(game.id)">
-      <ion-thumbnail slot="start">
-        <img src="https://via.placeholder.com/50" alt="{{ game.category }} Image">
-      </ion-thumbnail>
-      <ion-label>{{ game.category }}</ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-button (click)="nextPage()" [disabled]="selectedGames.length < 2">
-    Next: Graphics Card Choice
-  </ion-button>
 
+  <div class="ion-text-center">
+    <h1 class="">Klar, Parat, <span class="next_build-color">Spil</span>!</h1>
+    <p class="ion-padding">
+      Vælg <span class="next_build-color">2 spil</span> du ønsker din computer skal kunne <span class="next_build-color">trække</span>.
+    </p>
+  </div>
+  <ion-grid class=" mt-0">
+    <ion-row>
+      <ion-col size-md="6" class="ion-text-center" (click)="selectGame('H')">
+        <img class="card" alt="Silhouette of mountains" src="../../assets/img/cyperpunk.webp" />
+      </ion-col>
+
+      <ion-col size-md="6" class="ion-text-center" (click)="selectGame('H')">
+        <img class="card" alt="Silhouette of mountains" src="../../assets/img/cod.webp" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-md="6" class="ion-text-center" (click)="selectGame('M')">
+        <img class="card" alt="Silhouette of mountains" src="../../assets/img/gta5.webp" />
+      </ion-col>
+
+      <ion-col size-md="6" class="ion-text-center" (click)="selectGame('M')">
+        <img class="card" alt="Silhouette of mountains" src="../../assets/img/alien.webp" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size-md="6" class="ion-text-center" (click)="selectGame('L')">
+        <img class="card" alt="Silhouette of mountains" src="../../assets/img/fortnite.webp" />
+      </ion-col>
+
+      <ion-col size-md="6" class="ion-text-center" (click)="selectGame('L')">
+        <img class="card" alt="Silhouette of mountains" src="../../assets/img/cs2.webp" />
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <button expand="full" routerLink="/dashboard" routerDirection="root">
+          <div class="ion-align-items-center d-flex ion-justify-content-center">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            Gå tilbage
+          </div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button expand="full" (click)="nextPage()" [disabled]="selectedComponentNames.length < 2">
+          <div class="ion-align-items-center d-flex ion-justify-content-center">
+            Gå videre
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

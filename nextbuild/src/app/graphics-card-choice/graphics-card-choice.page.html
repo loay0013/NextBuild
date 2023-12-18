@@ -1,24 +1,52 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Graphics Card Choice</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item (click)="selectGraphics(1)" [class.selected]="selectedGraphics === 1">
-      <ion-label>Høj Grafikkort</ion-label>
-    </ion-item>
-    <ion-item (click)="selectGraphics(2)" [class.selected]="selectedGraphics === 2">
-      <ion-label>Mellem Grafikkort</ion-label>
-    </ion-item>
-    <ion-item (click)="selectGraphics(3)" [class.selected]="selectedGraphics === 3">
-      <ion-label>Lav Grafikkort</ion-label>
-    </ion-item>
-  </ion-list>
+<ion-content class="ion-padding" >
+  <div class="ion-text-center">
+    <h1 class="">Grafik <span class="next_build-color">Valg</span></h1>
+    <p class="ion-padding">
+      Vælg din <span class="next_build-color">grafiske ydeevne</span>. Dette valg har indflydelse på din grafiske oplevelse under <span class="next_build-color">gaming</span>.
+    </p>
+  </div>
+  <ion-grid class="mt-0">
+    <ion-row>
+      <ion-col size="6" class="ion-text-center" (click)="selectProcessor('AMD Ryzen 3')" [class.selected]="selectedProcessorName === 'AMD Ryzen 3'">
+        <div class="card-container">
+          <img class="card" alt="Silhouette of mountains" src="../../assets/img/lav1.png" />
+          <p class="card-label low">Lav</p>
+        </div>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center" (click)="selectProcessor('Intel Core i7')" [class.selected]="selectedProcessorName === 'Intel Core i7'">
+        <div class="card-container">
+          <img class="card" alt="Silhouette of mountains" src="../../assets/img/mid1.png" />
+          <p class="card-label mid">Middel</p>
+        </div>
+      </ion-col>
+    </ion-row>
+      <ion-col  class="ion-text-center" (click)="selectProcessor('Intel Core i9')" [class.selected]="selectedProcessorName === 'Intel Core i9'">
+        <div class="card-container">
+          <img class="card" alt="Silhouette of mountains" src="../../assets/img/høj3.png" />
+          <p class="card-label high">Høj</p>
+        </div>
+      </ion-col>
+  </ion-grid>
 
-  <ion-button (click)="nextPage()" [disabled]="selectedGraphics === null">
-    Next: Storage Choice
-  </ion-button>
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <button expand="full" routerLink="/tabs/game-choice" routerDirection="root">
+          <div class="ion-align-items-center d-flex ion-justify-content-center">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+            Gå tilbage
+          </div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button expand="full" (click)="nextPage()" [disabled]="selectedProcessorName === null">
+          <div class="ion-align-items-center d-flex ion-justify-content-center">
+            Gå videre
+            <ion-icon name="arrow-forward-outline"></ion-icon>
+          </div>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-

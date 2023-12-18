@@ -39,4 +39,23 @@ export class PcComponentService {
   findByTitle(title: any): Observable<PcComponent[]> {
     return this.http.get<PcComponent[]>(`${baseUrl}?title=${title}`);
   }
+  findByCategory(category: string[]): Observable<PcComponent[]> {
+    const categoryString = category.join(',');
+    return this.http.get<PcComponent[]>(`${baseUrl}?category=${categoryString}`);
+  }
+  findByTypeId(typeId: string): Observable<PcComponent[]> {
+    return this.http.get<PcComponent[]>(`${baseUrl}?typeId=${typeId}`);
+  }
+
+  findByProcessorName(processorName: string): Observable<PcComponent> {
+    return this.http.get<PcComponent>(`${baseUrl}?processorName=${processorName}`);
+  }
+
+  findByStorageCapacity(storageCapacity: any): Observable<PcComponent[]> {
+    return this.http.get<PcComponent[]>(`${baseUrl}?storage_capacity=${storageCapacity}`);
+  }
+  findByRamCapacity(ramCapacity: string): Observable<PcComponent[]> {
+    return this.http.get<PcComponent[]>(`${baseUrl}/ram_capacity/${ramCapacity}`);
+  }
+
 }

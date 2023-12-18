@@ -1,0 +1,52 @@
+ion-content{
+  --background:#1D3B45;
+}
+.h1-font{
+  font-size: 32px;
+  font-family: monospace;
+  font-weight: bold;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+}
+.p-span{
+  color: #39D67F;
+}
+.bg-komponenter{
+  background-color: #29214D;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.padding{
+  padding: 10px;
+}
+ion-item{
+ --background: #514A59;
+  border-radius: 3px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  --border-style: none;
+}
+.p-komponenter{
+  padding-top: 5px;
+  color: white;
+}
+h2{
+  font-weight: bold;
+}
+.margin{
+  margin: 10px;
+}
+ion-button{
+  border-radius: 5px;
+  --background: linear-gradient(277deg, #6747C0 5.23%, #004B75 107.86%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-star{
+  background: linear-gradient(277deg, #6747C0 5.23%, #004B75 107.86%);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  border-radius:50px;
+}

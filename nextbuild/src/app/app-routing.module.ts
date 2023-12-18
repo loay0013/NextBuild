@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path: 'multitask',
     loadChildren: () => import('./multitask/multitask.module').then( m => m.MultitaskPageModule)
+  },
+  {
+    path: 'resultater',
+    loadChildren: () => import('./resultater/resultater.module').then( m => m.ResultaterPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   }
 ];
 @NgModule({

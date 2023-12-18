@@ -9,7 +9,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -s"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "firebase": "^10.7.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
+    "swiper": "^11.0.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
@@ -39,6 +41,7 @@
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.2",
     "@angular/language-service": "^17.0.2",
+    "@compodoc/compodoc": "^1.1.23",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",

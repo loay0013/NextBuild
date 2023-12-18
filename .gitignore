@@ -1,0 +1,13 @@
+/node_modules
+npm-debug.log
+yarn-error.log
+
+
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,86 @@
+ion-content{
+  --background: linear-gradient(196deg, #321D4D 47.63%, #2A1936 107.97%)!important;
+}
+
+
+
+$background: linear-gradient(196deg, #321D4D 47.63%, #2A1936 107.97%)!important;
+
+.next_build-color{
+  color: #39D67F;
+}
+
+h1{
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+p{
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.card{
+  height: 240px;
+  width: 220px;
+  object-fit: cover;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+}
+
+
+button{
+  margin-top: 40px;
+  border-radius: 5px;
+  background: linear-gradient(277deg, #12c657 5.23%, #075138 107.86%);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  width: 152px;
+  height: 43px;
+  font-size: 17px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.d-flex{
+  display: flex!important;
+}
+
+ion-icon{
+  padding: 5px;
+}
+
+.card-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+
+ion-row {
+  align-items: stretch;
+}
+
+ion-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

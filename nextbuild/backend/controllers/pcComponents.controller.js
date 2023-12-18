@@ -20,6 +20,7 @@ exports.create = (req, res) => {
     ram_capacity:req.body.ram_capacity,
     storage_capacity:req.body.storage_capacity,
     category:req.body.category,
+    processorName:req.body.processorName,
     published: req.body.published ? req.body.published : false
   };
 

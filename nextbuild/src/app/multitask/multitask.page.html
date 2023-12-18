@@ -1,13 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Multitask</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Multitask</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <div class="ion-text-center ion-padding">
+      <h1 class="">Har du behov for at kunne <span class="next_build-color">multitaske</span>?</h1>
+      <p class="ion-padding">
+        Dette kan forkomme ved brug af flere <span class="next_build-color">skærme</span> eller mange <span class="next_build-color">applikationer</span>, der er åbne på samme tid.
+      </p>
+    </div>
+  <ion-grid>
+    <ion-row>
+      <!-- Billede 1 og knapper -->
+      <ion-col size="6">
+        <img src="../../assets/img/pink.png " alt="Billede 1">
+        <button (click)="selectRamCapacity('16')" expand="full">
+          Nej
+        </button>
+      </ion-col>
+
+      <!-- Billede 2 og knapper -->
+      <ion-col size="6">
+        <img src="../../assets/img/blue.png" alt="Billede 2">
+        <button (click)="selectRamCapacity('32')" expand="full" >
+          Ja
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-col>
+    <button (click)="nextPage()" [disabled]="selectedRamCapacity === null">
+      Resultater
+    </button>
+  </ion-col>
 </ion-content>

@@ -6,6 +6,7 @@ export interface PcComponent {
   ram_capacity?: string;
   storage_capacity?: string;
   category?: string;
+  processorName?: string;
   published?: boolean;
 }
 
